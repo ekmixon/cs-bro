@@ -13,8 +13,8 @@ f.write('#fields\talexa\n')
 
 # Alexa's top 500 domains are spread across 20 pages
 # To change the number of domains collected (top 50, top 250), modify the range
-for num in range(0,20):
-  site = "http://www.alexa.com/topsites/global;" + str(num)
+for num in range(20):
+  site = f"http://www.alexa.com/topsites/global;{str(num)}"
   page = requests.get(site)
   soup = bs4.BeautifulSoup(page.text)
 
